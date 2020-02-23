@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>bull</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card *ngIf="bull">
+    {{bull.nombre}}
+    {{bull.codigoDeToro}}
+    <img [src]="'assets/data/images/' +bull.codigoDeToro +'.jpg'">
+  </ion-card>
+
+  <ion-card *ngIf="bull">
+
+  </ion-card>
+
+  <ion-grid>
+    <ion-row *ngIf="bull">
+      <ion-col>
+        {{bull.codigoDeToro}}
+      </ion-col>
+      <ion-col>
+      </ion-col>
+      <ion-col>{{bull.tpi}}</ion-col>
+      <ion-col>{{bull.tpi}}</ion-col>
+      <ion-col>{{bull.nm}}</ion-col>
+      <ion-col>{{bull.cm}}</ion-col>
+      <ion-col>{{bull.leche}}</ion-col>
+      <ion-col>{{bull.proteina}}</ion-col>
+      <ion-col>{{bull.protporcentaje}}</ion-col>
+      <ion-col>{{bull.grasa}}</ion-col>
+      <ion-col>{{bull.porcentajeGrasa}}</ion-col>
+      <ion-col>{{bull.cfp}}</ion-col>
+      <ion-col>{{bull.prel}}</ion-col>
+      <ion-col>{{bull.ptat}}</ion-col>
+      <ion-col>{{bull.udc}}</ion-col>
+      <ion-col>{{bull.flc}}</ion-col>
+      <ion-col>{{bull.trel}}</ion-col>
+      <ion-col>{{bull.pl}}</ion-col>
+      <ion-col>{{bull.liv}}</ion-col>
+      <ion-col>{{bull.dpr}}</ion-col>
+      <ion-col>{{bull.scs}}</ion-col>
+      <ion-col>{{bull.sce}}</ion-col>
+      <ion-col>{{bull.dce}}</ion-col>
+      <ion-col>{{bull.ssb}}</ion-col>
+      <ion-col>{{bull.dsbb}}</ion-col>
+      <ion-col>{{bull.ccr}}</ion-col>
+      <ion-col>{{bull.hcr}}</ion-col>
+      <ion-col>{{bull.betaCaseina}}</ion-col>
+      <ion-col>{{bull.pedigri}}</ion-col>
+      <ion-col>{{bull.aaa}}</ion-col>
+      <ion-col>{{bull.dms}}</ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

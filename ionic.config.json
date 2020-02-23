@@ -1,0 +1,8 @@
+{
+  "name": "alta-catalogo",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "id": "74b3e4ba"
+}

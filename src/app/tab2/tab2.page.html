@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Tab Two
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row *ngFor="let cow of cows" [routerLink]="['/bull/', cow.codigoDeToro]">
+      <ion-col>
+        {{cow.codigoDeToro}}
+      </ion-col>
+      <ion-col>
+        <img [src]="'assets/data/images/' +cow.codigoDeToro +'.jpg'">
+      </ion-col>
+      <ion-col>{{cow.tpi}}</ion-col>
+      <ion-col>{{cow.tpi}}</ion-col>
+      <ion-col>{{cow.nm}}</ion-col>
+      <ion-col>{{cow.cm}}</ion-col>
+      <ion-col>{{cow.leche}}</ion-col>
+      <ion-col>{{cow.proteina}}</ion-col>
+      <ion-col>{{cow.protporcentaje}}</ion-col>
+      <ion-col>{{cow.grasa}}</ion-col>
+      <ion-col>{{cow.porcentajeGrasa}}</ion-col>
+      <ion-col>{{cow.cfp}}</ion-col>
+      <ion-col>{{cow.prel}}</ion-col>
+      <ion-col>{{cow.ptat}}</ion-col>
+      <ion-col>{{cow.udc}}</ion-col>
+      <ion-col>{{cow.flc}}</ion-col>
+      <ion-col>{{cow.trel}}</ion-col>
+      <ion-col>{{cow.pl}}</ion-col>
+      <ion-col>{{cow.liv}}</ion-col>
+      <ion-col>{{cow.dpr}}</ion-col>
+      <ion-col>{{cow.scs}}</ion-col>
+      <ion-col>{{cow.sce}}</ion-col>
+      <ion-col>{{cow.dce}}</ion-col>
+      <ion-col>{{cow.ssb}}</ion-col>
+      <ion-col>{{cow.dsbb}}</ion-col>
+      <ion-col>{{cow.ccr}}</ion-col>
+      <ion-col>{{cow.hcr}}</ion-col>
+      <ion-col>{{cow.betaCaseina}}</ion-col>
+      <ion-col>{{cow.pedigri}}</ion-col>
+      <ion-col>{{cow.aaa}}</ion-col>
+      <ion-col>{{cow.dms}}</ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
