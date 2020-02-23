@@ -1,50 +1,172 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Tab Two
+      Toros
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-grid>
-    <ion-row *ngFor="let cow of cows" [routerLink]="['/tabs/bull/', cow.codigoDeToro]">
-      <ion-col>
-        {{cow.codigoDeToro}}
-      </ion-col>
-      <ion-col>
-        <img [src]="'assets/data/images/' +cow.codigoDeToro +'.jpg'">
-      </ion-col>
-      <ion-col>{{cow.tpi}}</ion-col>
-      <ion-col>{{cow.tpi}}</ion-col>
-      <ion-col>{{cow.nm}}</ion-col>
-      <ion-col>{{cow.cm}}</ion-col>
-      <ion-col>{{cow.leche}}</ion-col>
-      <ion-col>{{cow.proteina}}</ion-col>
-      <ion-col>{{cow.protporcentaje}}</ion-col>
-      <ion-col>{{cow.grasa}}</ion-col>
-      <ion-col>{{cow.porcentajeGrasa}}</ion-col>
-      <ion-col>{{cow.cfp}}</ion-col>
-      <ion-col>{{cow.prel}}</ion-col>
-      <ion-col>{{cow.ptat}}</ion-col>
-      <ion-col>{{cow.udc}}</ion-col>
-      <ion-col>{{cow.flc}}</ion-col>
-      <ion-col>{{cow.trel}}</ion-col>
-      <ion-col>{{cow.pl}}</ion-col>
-      <ion-col>{{cow.liv}}</ion-col>
-      <ion-col>{{cow.dpr}}</ion-col>
-      <ion-col>{{cow.scs}}</ion-col>
-      <ion-col>{{cow.sce}}</ion-col>
-      <ion-col>{{cow.dce}}</ion-col>
-      <ion-col>{{cow.ssb}}</ion-col>
-      <ion-col>{{cow.dsbb}}</ion-col>
-      <ion-col>{{cow.ccr}}</ion-col>
-      <ion-col>{{cow.hcr}}</ion-col>
-      <ion-col>{{cow.betaCaseina}}</ion-col>
-      <ion-col>{{cow.pedigri}}</ion-col>
-      <ion-col>{{cow.aaa}}</ion-col>
-      <ion-col>{{cow.dms}}</ion-col>
-    </ion-row>
-  </ion-grid>
+  <div style="overflow-x:auto;">
+    <table mat-table matSort (matSortChange)="sortData($event)"
+           [dataSource]="sortedData">
+      <ng-container matColumnDef="codigoDeToro" sticky>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header="codigoDeToro">
+          Código de Toro
+        </th>
+        <td mat-cell *matCellDef="let bull">
+          {{bull.codigoDeToro}}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="image" sticky>
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let bull">
+          <img [src]="'assets/data/images/' +bull.codigoDeToro +'.jpg'">
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="nombre" sticky>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header="nombre">Nombre
+        </th>
+        <td mat-cell *matCellDef="let bull">{{bull.nombre}}</td>
+      </ng-container>
+      <ng-container matColumnDef="tpi">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header="tpi">TPI</th>
+        <td mat-cell *matCellDef="let bull">{{bull.tpi}}</td>
+      </ng-container>
+      <ng-container matColumnDef="nm">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header="nm">NM$</th>
+        <td mat-cell *matCellDef="let bull">{{bull.nm}}</td>
+      </ng-container>
+      <ng-container matColumnDef="cm">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header="cm">CM$</th>
+        <td mat-cell *matCellDef="let bull">{{bull.cm}}</td>
+      </ng-container>
+      <ng-container matColumnDef="leche">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header="leche">Leche</th>
+        <td mat-cell *matCellDef="let bull">{{bull.leche}}</td>
+      </ng-container>
+      <ng-container matColumnDef="proteina">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header="proteina">
+          Proteina
+        </th>
+        <td mat-cell *matCellDef="let bull">{{bull.proteina}}</td>
+      </ng-container>
+      <ng-container matColumnDef="protporcentaje">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header="protporcentaje">
+          Proteina %
+        </th>
+        <td mat-cell *matCellDef="let bull">{{bull.protporcentaje}}</td>
+      </ng-container>
+      <ng-container matColumnDef="grasa">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header="grasa">Grasa</th>
+        <td mat-cell *matCellDef="let bull">{{bull.grasa}}</td>
+      </ng-container>
+      <ng-container matColumnDef="porcentajeGrasa">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header="porcentajeGrasa">
+          Grasa %
+        </th>
+        <td mat-cell *matCellDef="let bull">{{bull.porcentajeGrasa}}</td>
+      </ng-container>
+      <ng-container matColumnDef="cfp">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header="cfp">CFP</th>
+        <td mat-cell *matCellDef="let bull">{{bull.cfp}}</td>
+      </ng-container>
+      <ng-container matColumnDef="prel">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header="prel">Prel</th>
+        <td mat-cell *matCellDef="let bull">{{bull.prel}}</td>
+      </ng-container>
+      <ng-container matColumnDef="ptat">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header="ptat">PTAT</th>
+        <td mat-cell *matCellDef="let bull">{{bull.ptat}}</td>
+      </ng-container>
+      <ng-container matColumnDef="udc">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header="udc">UDC</th>
+        <td mat-cell *matCellDef="let bull">{{bull.udc}}</td>
+      </ng-container>
+      <ng-container matColumnDef="flc">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header="flc">FLC</th>
+        <td mat-cell *matCellDef="let bull">{{bull.flc}}</td>
+      </ng-container>
+      <ng-container matColumnDef="trel">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header="trel">TRel</th>
+        <td mat-cell *matCellDef="let bull">{{bull.trel}}</td>
+      </ng-container>
+      <ng-container matColumnDef="pl">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header="pl">PL</th>
+        <td mat-cell *matCellDef="let bull">{{bull.pl}}</td>
+      </ng-container>
+      <ng-container matColumnDef="liv">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header="liv">LIV</th>
+        <td mat-cell *matCellDef="let bull">{{bull.liv}}</td>
+      </ng-container>
+      <ng-container matColumnDef="dpr">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header="dpr">DPR</th>
+        <td mat-cell *matCellDef="let bull">{{bull.dpr}}</td>
+      </ng-container>
+      <ng-container matColumnDef="scs">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header="scs">SCS</th>
+        <td mat-cell *matCellDef="let bull">{{bull.scs}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="sce">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header="sce">SCE</th>
+        <td mat-cell *matCellDef="let bull">{{bull.sce}}</td>
+      </ng-container>
+      <ng-container matColumnDef="dce">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header="dce">DCE</th>
+        <td mat-cell *matCellDef="let bull">{{bull.dce}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="ssb">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header="ssb">SSB</th>
+        <td mat-cell *matCellDef="let bull">{{bull.ssb}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="dsbb">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header="dsbb">DSBB</th>
+        <td mat-cell *matCellDef="let bull">{{bull.dsbb}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="ccr">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header="ccr">CCR</th>
+        <td mat-cell *matCellDef="let bull">{{bull.ccr}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="hcr">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header="hcr">HCR</th>
+        <td mat-cell *matCellDef="let bull">{{bull.hcr}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="betaCaseina">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header="betaCaseina">
+          Beta-Caseína
+        </th>
+        <td mat-cell *matCellDef="let bull">{{bull.betaCaseina}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="pedigri">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header="pedigri">Pedirgí
+        </th>
+        <td mat-cell *matCellDef="let bull">{{bull.pedigri}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="aaa">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header="aaa">aAa</th>
+        <td mat-cell *matCellDef="let bull">{{bull.aaa}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="dms">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header="dms">DMS</th>
+        <td mat-cell *matCellDef="let bull">{{bull.dms}}</td>
+      </ng-container>
+
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+      <tr mat-row *matRowDef="let bull; columns: displayedColumns;"
+          [routerLink]="['/tabs/bull/', bull.codigoDeToro]"></tr>
+    </table>
+
+  </div>
 
 </ion-content>
