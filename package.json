@@ -12,7 +12,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "electron": "electron .",
-    "electron-build": "ng build --prod && electron .",
+    "electron-build": "ng build --prod --base-href=./ && electron .",
     "pack": "electron-builder --dir",
     "dist": "electron-builder"
   },
@@ -71,9 +71,13 @@
   },
   "description": "An Ionic project",
   "build": {
-    "appId": "your.id",
-    "mac": {
-      "category": "your.app.category.type"
-    }
+    "appId": "alta.catalog",
+    "files": [
+      "!node_modules",
+      "!src",
+      "!docs",
+      "!dist",
+      "!e2e"
+    ]
   }
 }

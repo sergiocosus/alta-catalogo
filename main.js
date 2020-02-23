@@ -14,11 +14,12 @@ function createWindow () {
 
 
   win.loadURL(`file://${__dirname}/www/index.html`);
-console.log(`file://${__dirname}/www/index.html`);
   // Event when the window is closed.
   win.on('closed', function () {
     win = null
-  })
+  });
+  win.removeMenu();
+  win.maximize();
 }
 
 // Create window on electron intialization
