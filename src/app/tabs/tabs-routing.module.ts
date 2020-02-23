@@ -19,26 +19,16 @@ const routes: Routes = [
       },
       {
         path: 'bull',
-        children: [
-          {
-            path: '',
-            loadChildren: () =>
-              import('../tab2/tab2.module').then(m => m.Tab2PageModule)
-          }
-        ]
+        loadChildren: () =>
+          import('../tab2/tab2.module').then(m => m.Tab2PageModule)
       },
       {
-        path: 'bull/:bullId',
-        children: [
-          {
-            path: '',
-            loadChildren: () => import('../bull/bull.module').then( m => m.BullPageModule)
-          }
-        ]
+        path: 'bull',
+        loadChildren: () => import('../bull/bull.module').then( m => m.BullPageModule)
       },
       {
         path: '',
-        redirectTo: '/tabs/tab1',
+        redirectTo: '/tabs/bull',
         pathMatch: 'full'
       }
     ]

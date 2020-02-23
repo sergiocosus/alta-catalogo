@@ -7,14 +7,20 @@ import { IonicModule } from '@ionic/angular';
 import { BullPageRoutingModule } from './bull-routing.module';
 
 import { BullPage } from './bull.page';
+import { ChartsModule } from 'ng2-charts';
+import {BarChartComponent} from './components/bar-chart/bar-chart.component';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    BullPageRoutingModule
+    BullPageRoutingModule,
+    ChartsModule,
   ],
-  declarations: [BullPage]
+  declarations: [
+    BullPage,
+    BarChartComponent,
+  ]
 })
 export class BullPageModule {}
