@@ -15,6 +15,7 @@ export class Tab2Page implements OnInit {
     'codigoDeToro',
     'image',
     'nombre',
+    'quantity',
     'tpi',
     'nm',
     'cm',

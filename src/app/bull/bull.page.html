@@ -1,5 +1,8 @@
 <ion-header>
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
     <ion-title>
       <ng-container *ngIf="bull">
         {{bull.nombre}} -
@@ -10,189 +13,190 @@
 </ion-header>
 
 <ion-content *ngIf="bull">
+  <div class="container">
 
-  <ion-card>
-    <img [src]="'assets/data/images/' +bull.codigoDeToro +'.jpg'">
-  </ion-card>
+    <ion-card>
+      <img [src]="'assets/data/images/' +bull.codigoDeToro +'.jpg'">
+    </ion-card>
 
-  <ion-card>
-    <app-bar-chart [bull]="bull">
-    </app-bar-chart>
-  </ion-card>
 
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>{{bull.nombre}}</ion-card-title>
-      <ion-card-subtitle>{{bull.codigoDeToro}}</ion-card-subtitle>
-    </ion-card-header>
-    <ion-item>{{bull.fullName}}</ion-item>
-    <ion-item>{{bull.pedigri}}</ion-item>
-    <ion-item>{{bull.interregnumber}}</ion-item>
-    <ion-item>
-      <ion-label>DOB</ion-label>
-      {{bull.diaDeNacimiento}}
-    </ion-item>
-    <ion-item>
-      <ion-label>Kappa-Caseína: </ion-label>
-      {{bull.kappaCaseina}}
-    </ion-item>
-    <ion-item>
-      <ion-label>Beta-Caseína: </ion-label>
-      {{bull.betaCaseina}}
-    </ion-item>
-    <ion-item>
-      <ion-label>Haplotiposa: </ion-label>
-      {{bull.haplotypes}}
-    </ion-item>
-    <ion-item>
-      <ion-label>Genetic Codes: </ion-label>
-      {{bull.geneticCodes}}
-    </ion-item>
 
-    <ion-item>
-      <ion-label>aAa: </ion-label>
-      {{bull.aaa}}
-    </ion-item>
-    <ion-item>
-      <ion-label>DMS:</ion-label>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>{{bull.nombre}}</ion-card-title>
+        <ion-card-subtitle>{{bull.codigoDeToro}}</ion-card-subtitle>
+      </ion-card-header>
+      <ion-item>{{bull.fullName}}</ion-item>
+      <ion-item>{{bull.pedigri}}</ion-item>
+      <ion-item>{{bull.interregnumber}}</ion-item>
+      <ion-item>
+        <ion-label>DOB</ion-label>
+        {{bull.diaDeNacimiento}}
+      </ion-item>
+      <ion-item>
+        <ion-label>Kappa-Caseína:</ion-label>
+        {{bull.kappaCaseina}}
+      </ion-item>
+      <ion-item>
+        <ion-label>Beta-Caseína:</ion-label>
+        {{bull.betaCaseina}}
+      </ion-item>
+      <ion-item>
+        <ion-label>Haplotiposa:</ion-label>
+        {{bull.haplotypes}}
+      </ion-item>
+      <ion-item>
+        <ion-label>Genetic Codes:</ion-label>
+        {{bull.geneticCodes}}
+      </ion-item>
+
+      <ion-item>
+        <ion-label>aAa:</ion-label>
+        {{bull.aaa}}
+      </ion-item>
+      <ion-item>
+        <ion-label>DMS:</ion-label>
         {{bull.dms}}
-    </ion-item>
-    <ion-item>
-      <ion-label>EFI:</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>EFI:</ion-label>
         {{bull.efi}} %
-    </ion-item>
+      </ion-item>
 
-    <ion-item>
-      <ion-label>Prueba actual:</ion-label>
+      <ion-item>
+        <ion-label>Prueba actual:</ion-label>
         {{bull.prueba}}
-    </ion-item>
-    <!-- Need field  CDCB & HA-USA Genetic Evaluations 12/2019 -->
+      </ion-item>
+      <!-- Need field  CDCB & HA-USA Genetic Evaluations 12/2019 -->
 
-  </ion-card>
+    </ion-card>
 
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>TPI</ion-card-title>
-      <ion-card-subtitle> {{bull.tpi}}</ion-card-subtitle>
-    </ion-card-header>
-    <ion-card-header>
-      <ion-card-title>NMS</ion-card-title>
-      <ion-card-subtitle> {{bull.nm}}</ion-card-subtitle>
-    </ion-card-header>
-  </ion-card>
+    <ion-card>
+      <app-bar-chart [bull]="bull">
+      </app-bar-chart>
+    </ion-card>
 
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>Producción</ion-card-title>
-    </ion-card-header>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>TPI</ion-card-title>
+        <ion-card-subtitle> {{bull.tpi}}</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-header>
+        <ion-card-title>NMS</ion-card-title>
+        <ion-card-subtitle> {{bull.nm}}</ion-card-subtitle>
+      </ion-card-header>
+    </ion-card>
 
-    <ion-card-content>
-      <div>
-        Leche:
-        {{bull.leche}} Lbs
-        {{bull.prel}}% Rel.
-      </div>
-      <div>
-        Proteina:
-        {{bull.proteina}} Lbs
-        {{bull.protporcentaje}}%
-      </div>
-      <div>
-        Grasa:
-        {{bull.grasa}} Lbs
-        {{bull.porcentajeGrasa}}%
-      </div>
-      <div> Mérito Queso: +${{bull.cm}}</div>
-    </ion-card-content>
-  </ion-card>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Producción</ion-card-title>
+      </ion-card-header>
 
-  <ion-card>
-
-  </ion-card>
-
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>Rasgos de Salud</ion-card-title>
-    </ion-card-header>
-
-    <ion-card-content>
-      <div>
-        Vida Productiva
-        {{bull.pl}}
-      </div>
-      <div>
-        Livability
-        {{bull.liv}}
-      </div>
-      <div>
-        Calif. Células Somáticas
-        {{bull.scs}}
-      </div>
-      <div>
-        Mastitis
-        {{bull.mast}}
-      </div>
-      <div>
-        Cetosis
-        {{bull.ket}}
-      </div>
-      <div>
-        Retención Placenta
-        {{bull.rp}}
-      </div>
-      <div>
-        Tasa de Preñez de Hijas
-        {{bull.dpr}}
-      </div>
-      <div>
-        Tasa Concepción de Vaca
-        {{bull.ccr}}
-      </div>
-      <div>
-        Tasa Concepción de Vaquilla
-        {{bull.hcr}}
-      </div>
-      <div>
-        Metritis
-        {{bull.met}}
-      </div>
-      <div>
-        Desplazam. Abomaso
-        {{bull.da}}
-      </div>
-      <div>
-        Fiebre de Leche
-        {{bull.mf}}
-      </div>
-    </ion-card-content>
-  </ion-card>
+      <ion-card-content>
+        <div>
+          Leche:
+          {{bull.leche}} Lbs
+          {{bull.prel}}% Rel.
+        </div>
+        <div>
+          Proteina:
+          {{bull.proteina}} Lbs
+          {{bull.protporcentaje}}%
+        </div>
+        <div>
+          Grasa:
+          {{bull.grasa}} Lbs
+          {{bull.porcentajeGrasa}}%
+        </div>
+        <div> Mérito Queso: +${{bull.cm}}</div>
+      </ion-card-content>
+    </ion-card>
 
 
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>Rasgos de Parto</ion-card-title>
-    </ion-card-header>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Rasgos de Salud</ion-card-title>
+      </ion-card-header>
 
-    <ion-card-content>
-      <div>
-        FacilidadParto Toro
-        {{bull.sce}}
-        {{bull.sceRel}}
-        {{bull.sceObs}}
-      </div>
-      <div>
-        FacilidadParto Hija
-        {{bull.dce}}
-      </div>
-      <div>
-        Nac Muerto Toro
-        {{bull.ssb}}
-      </div>
-      <div>
-        Nac Muerto Hija
-        {{bull.dsbb}}
-      </div>
-    </ion-card-content>
-  </ion-card>
+      <ion-card-content>
+        <div>
+          Vida Productiva
+          {{bull.pl}}
+        </div>
+        <div>
+          Livability
+          {{bull.liv}}
+        </div>
+        <div>
+          Calif. Células Somáticas
+          {{bull.scs}}
+        </div>
+        <div>
+          Mastitis
+          {{bull.mast}}
+        </div>
+        <div>
+          Cetosis
+          {{bull.ket}}
+        </div>
+        <div>
+          Retención Placenta
+          {{bull.rp}}
+        </div>
+        <div>
+          Tasa de Preñez de Hijas
+          {{bull.dpr}}
+        </div>
+        <div>
+          Tasa Concepción de Vaca
+          {{bull.ccr}}
+        </div>
+        <div>
+          Tasa Concepción de Vaquilla
+          {{bull.hcr}}
+        </div>
+        <div>
+          Metritis
+          {{bull.met}}
+        </div>
+        <div>
+          Desplazam. Abomaso
+          {{bull.da}}
+        </div>
+        <div>
+          Fiebre de Leche
+          {{bull.mf}}
+        </div>
+      </ion-card-content>
+    </ion-card>
+
+
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Rasgos de Parto</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <div>
+          FacilidadParto Toro
+          {{bull.sce}}
+          {{bull.sceRel}}
+          {{bull.sceObs}}
+        </div>
+        <div>
+          FacilidadParto Hija
+          {{bull.dce}}
+        </div>
+        <div>
+          Nac Muerto Toro
+          {{bull.ssb}}
+        </div>
+        <div>
+          Nac Muerto Hija
+          {{bull.dsbb}}
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </div>
 
 </ion-content>

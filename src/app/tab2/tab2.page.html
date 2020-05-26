@@ -7,7 +7,7 @@
 </ion-header>
 
 <ion-content>
-  <div style="overflow-x:auto;">
+  <div class="container">
     <table mat-table matSort (matSortChange)="sortData($event)"
            [dataSource]="sortedData">
       <ng-container matColumnDef="codigoDeToro" sticky>
@@ -29,6 +29,10 @@
         <th mat-header-cell *matHeaderCellDef mat-sort-header="nombre">Nombre
         </th>
         <td mat-cell *matCellDef="let bull">{{bull.nombre}}</td>
+      </ng-container>
+      <ng-container matColumnDef="quantity">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header="quantity">Inventario</th>
+        <td mat-cell *matCellDef="let bull">{{bull.quantity}}</td>
       </ng-container>
       <ng-container matColumnDef="tpi">
         <th mat-header-cell *matHeaderCellDef mat-sort-header="tpi">TPI</th>

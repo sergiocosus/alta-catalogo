@@ -13,13 +13,14 @@ export class BarChartComponent implements OnInit {
 
   public barChartOptions: ChartOptions = {
     responsive: true,
+    maintainAspectRatio: false,
     // We use these empty structures as placeholders for dynamic theming.
     scales: {
       xAxes: [{}], yAxes: [{
         stacked: true,
         gridLines: {
           display: true,
-          color: 'rgba(255,99,132,0.2)'
+          color: 'rgba(52,122,188,0.87)'
         },
         ticks: {
           suggestedMax: 3,
@@ -99,7 +100,11 @@ export class BarChartComponent implements OnInit {
         this.bull.ftp,
         this.bull.rtp,
         this.bull.longitudDePezones,
-      ]
+      ],
+      label: '',
+      backgroundColor: 'rgba(15,32,188,0.49)',
+      hoverBackgroundColor: 'rgba(0,31,197,0.82)',
+      hoverBorderColor: 'rgb(0,31,197)'
     }];
   }
 
